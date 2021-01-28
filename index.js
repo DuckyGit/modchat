@@ -100,7 +100,7 @@ io.on('connection', (socket) => { // handle a user connecting
           fetch('http://scratchverifier.ddns.net:8888/verify/' + msg, { // make a request to the SV server
             method: 'PUT',
             headers: {
-               'Authorization': "Basic " + btoa(svAppId + ":" + svAppSecret) // use basic token auth to connect
+               'Authorization': "Basic " + btoa(svAppId + ":" + svAppSecret)
             }
           }).then((response) => {
             return response.json();
@@ -112,7 +112,7 @@ io.on('connection', (socket) => { // handle a user connecting
               fetch('http://scratchverifier.ddns.net:8888/verify/' + msg, { // make a request to the SV server (again)
                 method: 'POST',
                 headers: {
-                   'Authorization': "Basic " + btoa(svAppId + ":" + svAppSecret)" // use basic token auth again
+                   'Authorization': "Basic " + btoa(svAppId + ":" + svAppSecret) 
                 }
               }).then((response) => {
                 return response.ok;
