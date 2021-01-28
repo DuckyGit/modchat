@@ -20,8 +20,8 @@ filter.addWords(...addWords); //Add those to the filter
 // End Filter Setup
 let bannedList = ['::ffff:10.35.235.225'];
 let modsList = ['Ekmand', '-Archon-', 'MicahLT'];
-var svAppId = "4205845"; // register SV app id
-var svAppSecret = "58402c158faf27abf7e89e723672d315c9a7bf40be0e7cb6bae2d8dcde886a0b"; // register SV app secret (token)
+var svAppId = "69794010"; // register SV app id
+var svAppSecret = "e973fef948bc1278f4857a458e4dc42cd559b6372c74ead2b84caebee5bb3353"; // register SV app secret (token)
 app.use(express.static(__dirname + '/public')); // tell express where to get public assets
 app.get('/chat', (req, res) => { // set root location to index.html
   res.sendFile(__dirname + '/index.html');
@@ -100,7 +100,7 @@ io.on('connection', (socket) => { // handle a user connecting
           fetch('http://scratchverifier.ddns.net:8888/verify/' + msg, { // make a request to the SV server
             method: 'PUT',
             headers: {
-              'Authorization': "Basic 69794010:e973fef948bc1278f4857a458e4dc42cd559b6372c74ead2b84caebee5bb3353" // use basic token auth to connect
+               'Authorization': "Basic " + btoa(svAppId + ":" + svAppSecret) // use basic token auth to connect
             }
           }).then((response) => {
             return response.json();
@@ -112,7 +112,7 @@ io.on('connection', (socket) => { // handle a user connecting
               fetch('http://scratchverifier.ddns.net:8888/verify/' + msg, { // make a request to the SV server (again)
                 method: 'POST',
                 headers: {
-                  'Authorization': "Basic 69794010:e973fef948bc1278f4857a458e4dc42cd559b6372c74ead2b84caebee5bb3353" // use basic token auth again
+                   'Authorization': "Basic " + btoa(svAppId + ":" + svAppSecret)" // use basic token auth again
                 }
               }).then((response) => {
                 return response.ok;
