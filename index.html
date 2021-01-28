@@ -4,14 +4,14 @@
 <head>
   <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no, width=device-width">
   <link rel="shortcut icon" href="/fav-normal.png" type="image/png" id="favicon">
-  <title>Modchat - Realtime Moderated Chat</title>
+  <title>Scratchchat</title>
   <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="/style.css">
 </head>
 
 <body>
-  <a href="#form" id="changeTheme" class="topbtn">Swap Theme</a> <a id="changeRoom" class="topbtn" href="#form">Change Room</a>
+  <a href="#form" id="changeTheme" class="topbtn">Change Theme</a> <a id="changeRoom" class="topbtn" href="#form">Create/Join Room</a>
   <form action="" id="roomName" autocomplete="off">
     <input id="r" autocomplete="off" placeholder="room name" data-lpignore="true" /><button><span class="material-icons">
         send
@@ -26,7 +26,7 @@
   </form>
   <div class="blocker"></div>
   <div class="register">
-    <h1>Sign in with Scratch</h1>
+    <h1>Authenticate with Scratch</h1>
     <form action="" id="username" autocomplete="off">
       <input id="username-input" autocomplete="off" placeholder="username"></input>
       <button><span class="material-icons">
@@ -35,7 +35,7 @@
       <br>
     </form>
     <p id="svCode"></p><br>
-    <a href="#" id="completeSV">Complete Verification</a>
+    <a href="#" id="completeSV">Check</a>
   </div>
   <script src="/socket.io/socket.io.js"></script>
   <script src="/app.js">
