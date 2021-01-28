@@ -58,7 +58,7 @@ document.getElementById("changeRoom").addEventListener('click', function() {
 document.getElementById("roomName").addEventListener("submit", function(event) {
   event.stopImmediatePropagation(); // stop reloads
   event.preventDefault(); // stop reloads
-  window.location.replace("https://modchat-app.herokuapp.com/chat/?r=" + document.getElementById("r").value);
+  window.location.replace("https://scratchchat.herokuapp.com/chat/?r=" + document.getElementById("r").value);
 })
 
 document.getElementById("form").addEventListener("submit", function(event) { // listen for submits on the message sending form
@@ -115,7 +115,7 @@ socket.on('chatMessage', function(object) { // handle recieving chat messages
   window.scrollBy(0, 1700);
   if (document.hidden) {
     document.getElementById("favicon").href = "/fav-msg.png";
-    var notification = new Notification('Modchat', {
+    var notification = new Notification('Scratchchat', {
       body: object.sender + " says: '" + object.message + "'",
       icon: "/fav-normal.png"
     })
@@ -133,12 +133,12 @@ socket.on('botMessage', function(msg) { // handle recieving chat messages
   img.src = "https://cdn2.scratch.mit.edu/get_image/user/61090562_60x60.png";
   img.classList.add("pfp");
   img.onclick = function() {
-    window.open('https://scratch.mit.edu/users/Modchat-Bot', '_blank');
+    window.open('https://scratch.mit.edu/users/Quackbot', '_blank');
   }
   p.innerHTML = msg; // add the message text to that element
   m.appendChild(img);
   m.appendChild(p);
-  m.setAttribute('title', 'Modchat Bot');
+  m.setAttribute('title', 'Quackbot');
   document.getElementById('messages').appendChild(m); // append the message to the message area
   window.scrollBy(0, 1700);
   if (document.hidden) {
